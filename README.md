@@ -10,6 +10,7 @@ A transpiled "Hello World" program is included for every language.
 The currently supported Laguages are
 - Java
 - C
+- HTML (embedded JavaScript)
 
 ## Requirements to run
 - Clojure
