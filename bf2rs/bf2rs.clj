@@ -2,7 +2,7 @@
 (require '[clojure.java.io :as io])
 
 (when (not= 2 (count *command-line-args*))
-  (println "Usage: bf2html [out-name] [code]")  
+  (println "Usage: bf2c [out-name] [code]")  
   (System/exit 65)
   )
 
@@ -13,18 +13,17 @@
   (spit out-name text :append true)
 )
 
-(def start "
-<!DOCTYPE html><html><head><title>brainfuck</title></head>
-<body><p id=\"out\"></p><script>")
-(def setup "let t=Array(100).fill(0);let p=0;const c=document.getElementById('out');")
-(def end "</script><body></html>")
+(def start "fn main(){")
 
-(def plus "t[p]++;")
-(def minus "t[p]--;")
-(def arrow-right "p++;")
-(def arrow-left "p--;")
-(def dot "c.innerHTML+=String.fromCharCode(t[p]);")
-(def bracket-right "while(t[p]>0){")
+(def setup "let mut t: [i32;512]=[0;512];let mut p:usize=0;")
+(def end "}")
+
+(def plus "t[p]+=1;")
+(def minus "t[p]-=1;")
+(def arrow-right "p+=1;")
+(def arrow-left "p-=1;")
+(def dot "print!(\"{}\",char::from_u32(t[p] as u32).unwrap());")
+(def bracket-right "while t[p]>0 {")
 (def bracket-left "}")
 
 (if (.exists (io/file out-name))
