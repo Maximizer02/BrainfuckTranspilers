@@ -11,9 +11,11 @@ The currently supported Laguages are
 - Java
 - C
 - HTML (embedded JavaScript)
+- Rust 🚀🚀🚀 (blazingly fast 🚀)
 
 ## Requirements to run
 - Clojure
 - Java
 - GCC
+- rustc 🚀
 - Any POSIX compliant Shell (e.g. Bash)
