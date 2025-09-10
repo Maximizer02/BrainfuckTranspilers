@@ -1,0 +1,18 @@
+{
+  :infrastructure {
+       :start "fn main(){",
+       :setup "let mut t: [i32;512]=[0;512];let mut p:usize=0;",
+       :end "}"
+       },
+  :mappings {
+      :plus "t[p]+=1;",
+      :minus "t[p]-=1;",
+      :arrow-left "p-=1;",
+      :arrow-right "p+=1;",
+      :dot "print!(\"{}\",char::from_u32(t[p] as u32).unwrap());",
+      :bracket-left "while t[p]>0 {",
+      :bracket-right "}",
+      :default ""
+      }
+  :extension "rs"
+ }
