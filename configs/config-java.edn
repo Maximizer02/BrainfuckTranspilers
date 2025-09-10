@@ -1,0 +1,18 @@
+{
+  :infrastructure {
+       :start "class Main{public static void main(String[]args){",
+       :setup "int[]t=new int[512];int p=0;",
+       :end "}}"
+       },
+  :mappings {
+      :plus "t[p]++;",
+      :minus "t[p]--;",
+      :arrow-left "p--;",
+      :arrow-right "p++;",
+      :dot "System.out.print((char)t[p]);",
+      :bracket-left "while(t[p]>0){",
+      :bracket-right "}",
+      :default ""
+      }
+  :extension "java"
+ }
