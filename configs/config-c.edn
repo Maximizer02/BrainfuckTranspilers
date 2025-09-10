@@ -1,0 +1,19 @@
+{
+  :infrastructure {
+       :start "#include <stdio.h>
+int main(){",
+       :setup "int t[512]={0};int p=0;",
+       :end "return 0;}"
+       },
+  :mappings {
+      :plus "t[p]++;",
+      :minus "t[p]--;",
+      :arrow-left "p--;",
+      :arrow-right "p++;",
+      :dot "printf(\"%c\",t[p]);",
+      :bracket-left "while(t[p]>0){",
+      :bracket-right "}",
+      :default ""
+      }
+  :extension "c"
+ }
