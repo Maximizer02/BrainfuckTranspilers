@@ -1,0 +1,18 @@
+{
+  :infrastructure {
+       :start "<!DOCTYPE html><html><head><title>brainfuck</title></head><body><p id=\"out\"></p><script>",
+       :setup "let t=Array(512).fill(0);let p=0;const c=document.getElementById('out');",
+       :end "</script></body></html>"
+       },
+  :mappings {
+      :plus "t[p]++;",
+      :minus "t[p]--;",
+      :arrow-left "p--;",
+      :arrow-right "p++;",
+      :dot "c.innerHTML+=String.fromCharCode(t[p]);",
+      :bracket-left "while(t[p]>0){",
+      :bracket-right "}",
+      :default ""
+      }
+  :extension "html"
+ }
